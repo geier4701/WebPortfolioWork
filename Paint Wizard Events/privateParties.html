@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Paint Wizard - Private Parties</title>
+	<link rel="shortcut icon" href="images/Paint-Wizard-Face.png">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-grid.css">
+	<link rel="stylesheet" type="text/css" href="paintwizard.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel:400,700" rel="stylesheet">
+</head>
+<body>
+	<div class='wrapper'>
+<!-- NAVBAR -->
+		<nav class='navbar navbar-expand-lg navbar-light bg-light' id="navigation">
+			<div class='container'>
+				<a class='navbar-brand' href="home.html"><img src="images/icons8-wizard-50.png"> Paint Wizard</a>
+				<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarContent' aria-controls="navbarContent" aria-expand='fase' aria-label='Toggle Navigation'>
+					<span class='navbar-toggler-icon'></span>
+				</button>
+
+				<div class='collapse navbar-collapse' id='navbarContent'>
+					<div class='navbar-nav'>
+							<a class='nav-link' href="home.html">Home</a>
+							<a class='nav-link' href="about.html">About</a>
+							<a class='nav-link' href="upcomingEvents.html">Upcoming Events</a>
+							<a class='nav-link active' href="privateParties.html">Private Parties</a>
+							<a class='nav-link' href="gallery.html">Gallery</a>
+							<a class='nav-link' href="faq.html">FAQ</a>
+							<a class='nav-link' href="contact.html">Contact</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+<!-- JUMBOTRON -->
+		<div class='jumbotron jumbotron-fluid'></div>
+
+<!-- BODY -->
+		<div class='container'>
+
+			<h2>Private Parties</h2>
+			<p>Let us know a little about your group! We are happy to come anywhere within about an hour of our home base, Redwood Falls, or farther for large parties.</p>
+
+			<form action='privatePartiesSubmit.html'>
+				
+				<label for='name'>*Name:</label><br/>
+				<input type='text' name='name' id='name' required><br/><br/>
+				<label for='phone'>Phone:</label><br/>
+				<input type='text' name='phone' id='phone'><br/><br/>
+				<label for='email'>*Email:</label><br/>
+				<input type='email' name='email' id='email'><br/><br/>
+				<label for='groupSize'>Approximate Group Size:</label><br/>
+				<input type='number' name='groupSize' id='groupSize'><br/><br/>
+				<label for='desiredDate'>Desired Date:</label><br/>
+				<input type='date' name='desiredDate' id='desiredDate'><br/><br/>
+				<label for='location'>Location:</label><br/>
+				<input type='text' name='location' id='location'><br/><br/>
+
+				<button class='btn btn-primary btn-sm' type='submit'>Submit</button><br/><br/> <!-- SUBMIT BUTTON VALUE??? -->
+
+				<p><sup>* - Indicates a required field</sup></p>
+			</form>
+		</div>
+	</div>
+
+<!-- FOOTER -->
+	<br/>	
+	<div class='footer'>
+		<div class='container'>
+			<div class='row'>
+				<div class='logo col-lg-2 col-med-2'>
+					<img src="images/Paint-Wizard-Face-Small.png">
+				</div>
+				<div class='col-lg-3 col-med-3'>
+					<a href="home.html">Home</a><br/>
+					<a href="about.html">About</a><br/>
+					<a href="upcomingEvents.html">Upcoming Events</a><br/>
+					<a href="privateParties.html">Private Parties</a><br/><br/>
+					<sup>&copy; Andrew Geier 2018</sup>
+				</div>
+				<div class='col-lg-4 col-med-4'>
+					<a href="gallery.html">Gallery</a><br/>
+					<a href="faq.html">FAQ</a><br/>
+					<a href="contact.html">Contact</a><br/><br/><br/>
+					<sup><a href="https://icons8.com">Icon pack by Icons8</a></sup>
+				</div>
+				<div class='col-lg-3 col-med-3'>
+					<h5>Get our newsletter!</h5>
+					<hr />
+					<p>Stay up to date on upcoming events and offers.</p>
+					<a href="#">Sign-Up Now</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

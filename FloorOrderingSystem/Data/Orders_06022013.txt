@@ -1,0 +1,5 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+1,Shiori,MI,5.75,Laminate,100.00,1.75,2.10,175,210,22.14,407.14
+2,David,IN,6.00,Tile,100.00,3.50,4.15,350,415,45.90,810.90
+3,Fumie,OH,6.25,Laminate,100,1.75,2.10,175.00,210.00,24.062500,409.062500
+4,Willie,PA,6.75,Carpet,120,2.25,2.10,270.00,252.00,35.235000,557.235000

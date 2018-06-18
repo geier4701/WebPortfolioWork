@@ -1,0 +1,5 @@
+﻿OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+1,Wise,OH,6.25,Wood,100.00,5.15,4.75,515.00,475.00,61.88,1051.88
+2,Richard,PA,6.75,Carpet,100.00,2.25,2.10,225,210,29.36,464.36
+3,Brian,PA,6.75,Carpet,450,2.25,2.10,1012.50,945.00,132.131250,2089.631250
+4,Steve,PA,6.75,Wood,150,5.15,4.75,772.50,712.50,100.237500,1585.237500

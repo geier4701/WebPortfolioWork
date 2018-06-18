@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+1,anna,OH,6.25,Wood,500,5.15,4.75,2575.00,2375.00,309.375000,5259.375000

@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+1,Andrew,PA,6.75,Wood,500,5.15,4.75,2575.00,2375.00,334.125000,5284.125000

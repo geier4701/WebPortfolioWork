@@ -14,29 +14,9 @@ namespace FOS.Tests
 	[TestFixture]
 	public class FileRepoTests
 	{
-		const string seed = @"C:\Users\Poor Richard\Desktop\SeedFolder\Orders_06012013.txt";
-		const string dest = @"C:\Users\Poor Richard\Desktop\DestinationFolder\Orders_06012013.txt";
-		const string edit = @"C:\Users\Poor Richard\Desktop\DestinationFolder\Edited.txt";
-
-		[SetUp]
-		public void Setup()
-		{
-			if (File.Exists(dest))
-			{
-				File.Delete(dest);
-			}
-
-			if (File.Exists(edit))
-			{
-				File.Delete(edit);
-			}
-
-			File.Copy(seed, dest);
-		}
-
-		[TestCase (1, 2013, 06, 01, true)]
-		[TestCase (10, 2013, 06, 01, false)] //Bad order number
-		[TestCase (1, 2013, 01, 01, false)] //Bad order date
+		[TestCase(1, 2013, 06, 01, true)]
+		[TestCase(10, 2013, 06, 01, false)] //Bad order number
+		[TestCase(1, 2013, 01, 01, false)] //Bad order date
 		public void CanLoadCorrectOrder(int orderNumber, int year, int month, int day, bool success)
 		{
 			DateTime orderDate = new DateTime(year, month, day);
@@ -48,7 +28,7 @@ namespace FOS.Tests
 			Assert.AreEqual(success, response.Success);
 		}
 
-		[TestCase ("12/12/1212", "John", "PA", "Wood", 100, true)]
+		[TestCase("12/12/1212", "John", "PA", "Wood", 100, true)]
 		//Manager does not validate inputs for placing new order
 		public void CanAddNew(string OrderDate, string NameInput, string StateInput, string ProductInput, decimal AreaInput, bool success)
 		{
@@ -72,10 +52,15 @@ namespace FOS.Tests
 			DateTime orderDate = DateTime.Parse(OrderDate);
 
 			PlaceNewOrderResponse response = manager.NewOrder(orderDate, NameInput, StateInput, ProductInput, AreaInput);
+			AllOrdersResponse preDeleteResponse = manager.AllOrderLookup(orderDate);
+			int placedCount = preDeleteResponse.ListOfOrders.Count;
 
 			DeleteOrderResponse responseDelete = manager.DeleteOrder(response.Order);
+			AllOrdersResponse postDeleteResponse = manager.AllOrderLookup(orderDate);
+			int deleteCount = postDeleteResponse.ListOfOrders.Count;
 
-			Assert.AreEqual(success, response.Success);
+			Assert.AreEqual(success, responseDelete.Success);
+			Assert.AreEqual(deleteCount, (placedCount - 1));
 		}
 
 		[TestCase("12/12/1212", "John", "PA", "Wood", 100, "Richard", "OH", "Carpet", 200, true)]
@@ -85,15 +70,31 @@ namespace FOS.Tests
 			DateTime orderDate = DateTime.Parse(OrderDate);
 
 			PlaceNewOrderResponse response = manager.NewOrder(orderDate, NameInput, StateInput, ProductInput, AreaInput);
-			PlaceNewOrderResponse responseEdit = manager.NewOrder(orderDate, NameEdit, StateEdit, ProductEdit, AreaEdit);
-			
-			EditExistingOrderResponse editResponse = manager.EditOrder(responseEdit.Order);
+			Order toEdit = new Order
+			{
+				OrderNumber = response.Order.OrderNumber,
+				OrderDate = response.Order.OrderDate,
+				CustomerName = NameEdit,
+				State = StateEdit,
+				ProductType = ProductEdit,
+				Area = AreaEdit,
+				CostPerSquareFoot = 2.25m,
+				LaborCostPerSquareFoot = 2.10m,
+				MaterialCost = 450.00m,
+				LaborCost = 420.00m,
+				TotalTax = 54.375m,
+				Total = 924.375m
+			};
+
+			EditExistingOrderResponse editResponse = manager.EditOrder(toEdit);
+
+			OrderLookupResponse loadResponse = manager.OrderLookup(response.Order.OrderNumber, orderDate);
 
 			Assert.AreEqual(success, response.Success);
-			Assert.AreEqual(editResponse.Order.CustomerName, NameEdit);
-			Assert.AreEqual(editResponse.Order.State, StateEdit);
-			Assert.AreEqual(editResponse.Order.ProductType, ProductEdit);
-			Assert.AreEqual(editResponse.Order.Area, AreaEdit);
+			Assert.AreEqual(loadResponse.Order.CustomerName, NameEdit);
+			Assert.AreEqual(loadResponse.Order.State, StateEdit);
+			Assert.AreEqual(loadResponse.Order.ProductType, ProductEdit);
+			Assert.AreEqual(loadResponse.Order.Area, AreaEdit);
 		}
 	}
 }

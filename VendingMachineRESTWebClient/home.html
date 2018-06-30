@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Vending Machine Web Client</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+
+    <body>
+        <div class='container' id='wholePage'>
+            <h1 style='text-align: center' id='pageTitle'>Vending Machine</h1>
+            <div id='errorMessages'></div>
+            <hr/>
+
+            <div id='productSide' style="float:left; width: 70%">
+                <table class='table' id='productTable'><!-- Populated by jQuery --></table>
+            </div>
+
+            <div style="float: right; width:25%">
+                <div id='moneySide'>
+                    <p id='addingMoney'>
+                        <h3>Total Money In</h3>
+                        <br>
+                        <div id='totalMoneyIn'><!-- Populated by jQuery --></div>
+                        <br>
+                        <button class='btn btn-default' id='addDollarBtn'>Add Dollar</button>
+                        <button class='btn btn-default' id='addQuarterBtn'>Add Quarter</button>
+                        <br>
+                        <button class='btn btn-default' id='addDimeBtn'>Add Dime</button>
+                        <button class='btn btn-default' id='addNickelBtn'>Add Nickel</button>
+                        <hr/>
+                    </p>
+
+                    <p id='messagesAndPurchasing'>
+                        <h3>Messages</h3>
+                        <br>
+                        <div id='returnedMessage'><!-- Populated by jQuery --></div>
+                        <br>
+                        <h3>Selected Item</h3>
+                        <div id='itemSelected'><!-- Populated by jQuery --></div>
+                        <br>
+                        <button class='btn btn-default' id='makePurchaseBtn'>Make Purchase</button>
+                        <hr/>
+                    </p>
+
+                    <p id='change'>
+                        <h3>Change</h3>
+                        <br>
+                        <div id='changeToReturn'><!-- Populated by jQuery --></div>
+                        <br>
+                        <button class='btn btn-default' id='changeReturnBtn'>Return Change</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/home.js"></script>
+    </body>
+</html>

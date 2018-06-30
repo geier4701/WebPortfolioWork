@@ -1,0 +1,6 @@
+C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\TrafficLights\TrafficLights.Models\bin\Debug\TrafficLights.Models.dll
+C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\TrafficLights\TrafficLights.Models\bin\Debug\TrafficLights.Models.pdb
+C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\TrafficLights\TrafficLights.Models\obj\Debug\TrafficLights.Models.csproj.CoreCompileInputs.cache
+C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\TrafficLights\TrafficLights.Models\obj\Debug\TrafficLights.Models.dll
+C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\TrafficLights\TrafficLights.Models\obj\Debug\TrafficLights.Models.pdb
+C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\TrafficLights\TrafficLights.Models\obj\Debug\TrafficLights.Models.csprojResolveAssemblyReference.cache

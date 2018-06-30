@@ -85,7 +85,7 @@ function loadProducts() {
                 var row = `<td style="float:left; width: 33%">${id}. "${name}" <br>Price: $${price}<br><button onclick="selectItem(${id})" class="btn btn-default">Choose</button><br>Quantity Left: ${quantity}</td>`;
                 productTable.append(row);
             });
-        }, //CHANGE ERROR TO SHOW IN MESSAGES
+        },
         error: function() {
             $('#errorMessages')
                 .append($('<li>')

@@ -1,0 +1,28 @@
+﻿@model TheCodingVine.UI.ViewModels.BlogVM
+@{
+    ViewBag.Title = "DeleteABlog";
+}
+
+<h3 class="text-center">Delete Blog Confirmation</h3>
+
+<div class="row">
+    <div class="container-fluid col-lg-10 col-md-10 col-sm-10 table-bordered">
+        <br />
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="col-md-8">
+                    @Html.HiddenFor(m => m.Blog.BlogPostId)
+                    <h3>@Html.DisplayFor(m => m.Blog.Title)</h3>
+                    <p>Are you sure that you want to delete this blog post?</p>
+                </div>
+                <div class="col-md-2">
+                    <h3 class="text-center"><button type="submit" class="btn btn-outline-warning">Delete</button></h3>
+                </div>
+                <div class="col-md-2">
+                    <h3 class="text-center">@Html.ActionLink("Cancel", "MyBlogs", "Blog", null, new { @class = "btn btn-outline-info" })</h3>
+                </div>
+            </div>
+        }
+    </div>
+</div>

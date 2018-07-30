@@ -1,0 +1,49 @@
+﻿@model TheCodingVine.UI.ViewModels.UsersViewModel
+
+@{
+    ViewBag.Title = "All Users";
+}
+
+<br />
+<h2 class="text-center">All Users</h2>
+
+@foreach (var userToDisplay in Model.UserList)
+{
+    <div class="row ">
+        <div class="container-fluid col-md-offset-1 col-md-10 table-bordered">
+            <br />
+            <form>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <h3>@userToDisplay.UserName</h3>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Roles: 
+                            @foreach (var role in userToDisplay.Roles)
+                            {
+                                @Model.RolesList.FirstOrDefault(i => i.Id == role.RoleId).Name
+                            }
+                        </h3>
+                    </div>
+                    @if (userToDisplay.UserName != User.Identity.Name)
+                    {
+                        <div class="col-md-2">
+                            <h3 class="text-center"> @Html.ActionLink("Edit", "EditUser", "Account", new { id = userToDisplay.Id }, new { @class = "btn btn-outline-warning" })</h3>
+                        </div>
+                        <div class="col-md-2">
+                            <h3 class="text-center"> @Html.ActionLink("Delete", "DeleteUser", "Account", new { id = userToDisplay.Id }, new { @class = "btn btn-outline-danger" })</h3>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-4">
+                            <p>Changes to logged in user: @userToDisplay.UserName are not allowed.</p>
+                        </div>
+                    }
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+
+}

@@ -1,0 +1,64 @@
+﻿@model TheCodingVine.UI.ViewModels.BlogRollVM
+
+@{
+    ViewBag.Title = "All Blogs";
+}
+
+<h2 class="text-center">All Blogs</h2>
+
+
+@foreach (var blog in Model.BlogRoll)
+{
+    <div class="row ">
+        <div class="container-fluid col-md-offset-1 col-md-10 table-bordered">
+            <br />
+            <form>
+                <div class="form-row">
+                    <div class="col-md-8">
+                        <h3>@Html.ActionLink(blog.Title, "ViewSingleAll/" + blog.BlogPostId, "Blog", null, new { id = "post-list-link" })</h3>
+                    </div>
+                    <div class="col-md-2">
+                        <h3 class="text-center">@Html.ActionLink("Edit Blog", "EditABlog", "Blog", new { id = blog.BlogPostId }, new { @class = "btn btn-outline-warning" })</h3>
+                    </div>
+                    <div class="col-md-2">
+                        <h3 class="text-center">@Html.ActionLink("Delete Blog", "DeleteABlog", "Blog", new { id = blog.BlogPostId }, new { @class = "btn btn-outline-danger" })</h3>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-2">
+                        @if (blog.IsApproved == true)
+                        {
+                            <div id="approved-blog">
+                                <h5>Approved</h5>
+                            </div>
+                        }
+                        else
+                        {
+                            <div id="unapproved-blog">
+                                <h5>Not Approved</h5>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-md-5">
+                        <p class="text-left">
+                            <b>Admin Notes:</b> &nbsp;
+                            @if (blog.BlogNotes != null)
+                            {
+
+                                @blog.BlogNotes
+
+                            }
+                        </p>
+                        </div>
+                    <div class="col-md-5">
+                        <p class="text-right">@Model.BlogWriters.FirstOrDefault(i => i.Id == blog.BlogWriter.Id).UserName on @blog.PostDate</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+}
+
+
+

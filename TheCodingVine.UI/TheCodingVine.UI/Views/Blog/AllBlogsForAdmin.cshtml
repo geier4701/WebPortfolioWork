@@ -1,0 +1,20 @@
+﻿@model TheCodingVine.UI.ViewModels.BlogRollVM
+    ViewBag.Title = "AllBlogsForAdmin";
+}
+
+<h2>All Blogs</h2>
+
+@foreach (var blog in Model.BlogRoll)
+{
+    <div class="row">
+        <div class="container-fluid col-sm-2 col-md-5">
+            <h3>
+            @blog.Title
+            @Html.ActionLink("Edit", "EditABlog", "Blog", new { id = blog.BlogPostId }, new { @class = "btn btn-sm btn-warning" }) |
+            @Html.ActionLink("Delete", "DeleteABlog", "Blog", new { id = blog.BlogPostId }, new { @class = "btn btn-sm btn-danger" })
+            </h3>
+            <br />
+        </div>
+    </div>
+
+}

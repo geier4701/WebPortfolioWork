@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "View Post From List";
+}
+
+<br />
+<h2 class="text-center">Viewing one Static Post</h2>
+
+<div class="row">
+    <div class="container-fluid col-lg-10 col-md-10 col-sm-10 table-bordered">
+        <h2>@Model.Post.Title</h2>
+        @Html.Raw(Model.Post.Content)
+    </div>
+</div>
+
+<p class="text-center">@Html.ActionLink("Return to Post List", "ViewStaticPosts", "StaticPost")</p>

@@ -1,0 +1,57 @@
+﻿@model TheCodingVine.UI.ViewModels.EditUserViewModel
+@{
+    ViewBag.Title = "EditUser";
+
+}
+
+<h2 class="text-center">Edit User</h2>
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+
+        @using (Html.BeginForm("EditUser", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.User.Id)
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.User.Roles, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(m => m.SelectedRoleId, Model.Roles, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.User.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.User.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.NewPassword, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-outline-success" value="Save Edits" /> &nbsp; &nbsp;
+                    @Html.ActionLink("Cancel Editing", "AllUsers", "Account", null, new { @class = "btn btn-outline-info" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

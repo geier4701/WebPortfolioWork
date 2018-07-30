@@ -1,0 +1,70 @@
+﻿@model TheCodingVine.UI.ViewModels.BlogVM
+@{
+    ViewBag.Title = "Review";
+}
+
+<h2 class="text-center">Review Blog</h2>
+
+@using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+            
+
+    @Html.HiddenFor(m => m.Blog.BlogPostId)
+
+
+    <div class="form-row">
+        <div class="col-md-4 form-inline">
+            <label>Title: &nbsp; &nbsp;</label>
+            @Html.TextBoxFor(m => m.Blog.Title, new { @class = "form-control", placeholder = Model.Blog.Title })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Blog.Title) </span>
+        </div>
+        <div class="col-md-4 form-inline mr-auto">
+            <label>Search Tags:&nbsp; &nbsp; </label>
+            @Html.TextBoxFor(m => m.Blog.TagInputs, new { @class = "form-control", placeholder = Model.Blog.TagInputs })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Blog.TagInputs) </span>
+        </div>
+        <div class="col-md-4">
+            <p class="text-right"><b>Blog Author: </b> @Model.BlogWriters.FirstOrDefault(i => i.Id == Model.Blog.BlogWriter.Id).UserName</p>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <label>Blog Body:</label>
+        @Html.TextAreaFor(m => m.Blog.Content, new { @class = "form-control", placeholder = Model.Blog.Content })
+        <span class="text-danger">@Html.ValidationMessageFor(m => m.Blog.Content) </span>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4 form-inline">
+            <label>Post Date:&nbsp; &nbsp;</label>
+            @Html.TextBoxFor(m => m.Blog.PostDate, new { @class = "form-control", placeholder = Model.Blog.PostDate })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Blog.PostDate) </span>
+        </div>
+        <div class="col-md-4 form-inline">
+            <label>Remove Date:&nbsp; &nbsp; </label>
+            @Html.TextBoxFor(m => m.Blog.RemoveDate, new { @class = "form-control", placeholder = Model.Blog.RemoveDate })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Blog.RemoveDate) </span>
+        </div>
+        <div class="col-md-4 form-inline mr-auto">
+            &nbsp;
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="editor-label">
+                <label>Check to approve: </label>
+                @Html.CheckBoxFor(m => m.Blog.IsApproved)
+            </div>
+        </div>
+        <div class="col-md-4 form-inline">
+            <label>Notes from Admin:&nbsp; &nbsp; </label>
+            @Html.TextBoxFor(m => m.Blog.BlogNotes, new { @class = "form-control", placeholder = Model.Blog.BlogNotes })
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Blog.BlogNotes) </span>
+        </div>
+        <div class="col-md-4 form-inline">
+            <button type="submit" class="btn btn-outline-success">Save Review</button> &nbsp; &nbsp;
+            @Html.ActionLink("Cancel Review", "ViewPending", "Blog", null, new { @class = "btn btn-outline-info" })
+        </div>
+    </div>
+}

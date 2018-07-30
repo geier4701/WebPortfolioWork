@@ -1,0 +1,13 @@
+﻿@model TheCodingVine.UI.ViewModels.PostVM
+@{
+    ViewBag.Title = "View Post";
+}
+
+<br />
+<div class="row">
+    <div class="container-fluid col-lg-10 col-md-10 col-sm-10 table-bordered">
+        <h2>@Model.Post.Title</h2>
+        @Html.Raw(Model.Post.Content)
+    </div>
+</div>
+

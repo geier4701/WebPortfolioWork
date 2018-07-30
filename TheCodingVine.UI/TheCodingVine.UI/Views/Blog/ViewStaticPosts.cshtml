@@ -1,0 +1,21 @@
+﻿@model TheCodingVine.UI.ViewModels.PostListVM
+@{
+    ViewBag.Title = "ViewStaticPosts";
+}
+
+<h2>Static Posts</h2>
+
+@foreach(var staticPost in Model.PostList)
+{
+<div class="row">
+    <div class="container-fluid col-sm-2 col-md-5">
+        <h3>
+            @staticPost.Title
+            @Html.ActionLink("Edit", "EditStaticPost", "Blog", new { id = staticPost.StaticPostId }, new { @class = "btn btn-sm btn-warning" })
+            @Html.ActionLink("Delete", "DeleteStaticPost", "Blog", new { id = staticPost.StaticPostId }, new { @class = "btn btn-sm btn-danger" })
+        </h3>
+        @Html.Raw(staticPost.Content)
+    </div>
+    <br />
+</div>
+}

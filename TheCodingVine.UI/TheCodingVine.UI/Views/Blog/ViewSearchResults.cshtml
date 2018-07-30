@@ -1,0 +1,44 @@
+﻿@model TheCodingVine.UI.ViewModels.BlogRollVM
+@{
+    ViewBag.Title = "ViewSearchResults";
+}
+
+<h2 class="text-center">Search Results</h2>
+
+@if (Model.BlogRoll.Count == 0)
+{
+    <p class="alert-text"><br />No Search Results Found</p>
+}
+else
+{
+    foreach (var blog in Model.BlogRoll)
+    {
+        <div class="row">
+            <div class="container-fluid col-lg-10 col-md-10 col-sm-10 table-bordered">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>@blog.Title</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Raw(blog.Content)
+                    </div>
+                </div>
+                <div class="row">
+                    <br />
+                    <div class="col-md-6">
+                        @foreach (var tag in blog.SearchTags)
+                        {
+                            @(" #" + tag.SearchTagBody + " ");
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <p class="text-right">posted by: @Model.BlogWriters.FirstOrDefault(i => i.Id == blog.BlogWriter.Id).UserName on @blog.PostDate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+}

@@ -10,7 +10,6 @@ namespace REALHUMANTEXTINGSERVICE
 	{
 		static void Main(string[] args)
 		{
-			//Add error handling to be passed in responses
 			Menu.Start();
 		}
 	}

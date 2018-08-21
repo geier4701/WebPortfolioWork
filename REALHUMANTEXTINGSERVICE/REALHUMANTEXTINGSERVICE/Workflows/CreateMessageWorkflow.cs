@@ -19,92 +19,29 @@ namespace REALHUMANTEXTINGSERVICE.Workflows
 			Console.Write("Name your message: ");
 			newMessage.messageName = Console.ReadLine();
 
-			Console.WriteLine("Enter your full text message below. Enter 'PLACEHOLDER' at any location you want to insert a variable:");
-			var userInput = Console.ReadLine();
+			Console.WriteLine("Enter your full text message below. \n" +
+				"To enter a variable, refer to the following list");
 
-			if (string.IsNullOrEmpty(userInput) || string.IsNullOrEmpty(newMessage.messageName))
+			Console.WriteLine("GUEST INFO");
+			Console.WriteLine("1: Guest Name : {guestName}");
+			Console.WriteLine("2: Greeting : {timeGreeting}");
+			Console.WriteLine("COMPANY INFO");
+			Console.WriteLine("3: Company : {company}");
+			Console.WriteLine("4: City : {city}");
+			Console.WriteLine("5: TimeZone : {timezone}");
+			Console.WriteLine("RESERVATION INFO");
+			Console.WriteLine("6: Room Number : {roomNumber}");
+			Console.WriteLine("7: Check In Time : {startTimeStamp}");
+			Console.WriteLine("8: Check Out Time : {endTimeStamp}");
+			Console.WriteLine();
+
+			newMessage.text = Console.ReadLine();
+			if (string.IsNullOrEmpty(newMessage.text) || string.IsNullOrEmpty(newMessage.messageName))
 			{
 				Console.WriteLine("Invalid entry");
 				Console.ReadKey();
 				return;
 			}
-
-			var splitInput = userInput.Split(' ');
-
-			Console.Clear();
-			Console.WriteLine("GUEST INFO");
-			Console.WriteLine("1: Guest Name");
-			Console.WriteLine("2: Greeting");
-			Console.WriteLine("COMPANY INFO");
-			Console.WriteLine("3: Company");
-			Console.WriteLine("4: City");
-			Console.WriteLine("5: TimeZone");
-			Console.WriteLine("RESERVATION INFO");
-			Console.WriteLine("6: Room Number");
-			Console.WriteLine("7: Check In Time");
-			Console.WriteLine("8: Check Out Time");
-			Console.WriteLine("\n" + userInput + "\n");
-
-			var variables = new List<InsertVariable>();
-			for(int i = 0; i < splitInput.Count(); i++)
-			{
-				if(splitInput[i] == "PLACEHOLDER")
-				{
-					var newVar = new InsertVariable()
-					{
-						Index = i
-					};
-
-					Console.Write($"Which variable type would you like to add to variable {variables.Count + 1}? Enter it's number: ");
-					var varChoice = Console.ReadLine();
-
-					switch (varChoice)
-					{
-						case "1":
-							newVar.Text = "{guestName}";
-							break;
-						case "2":
-							newVar.Text = "{timeGreeting}";
-							break;
-						case "3":
-							newVar.Text = "{company}";
-							break;
-						case "4":
-							newVar.Text = "{city}";
-							break;
-						case "5":
-							newVar.Text = "{timeZone}";
-							break;
-						case "6":
-							newVar.Text = "{roomNumber}";
-							break;
-						case "7":
-							newVar.Text = "{startTimeStamp}";
-							break;
-						case "8":
-							newVar.Text = "{endTimeStamp}";
-							break;
-						default:
-							Console.WriteLine("THAT WASN'T AN OPTION, FRIEND");
-							Console.ReadKey();
-							return;
-					}
-
-					variables.Add(newVar);
-				}
-			}
-
-			foreach(var variable in variables)
-			{
-				splitInput[variable.Index] = variable.Text;
-			}
-
-			StringBuilder builder = new StringBuilder();
-			foreach(var word in splitInput)
-			{
-				builder.Append((word + " "));
-			}
-			newMessage.text = builder.ToString();
 
 			var allMessagesResponse = manager.GetAllMessages();
 			int lastId = 0;

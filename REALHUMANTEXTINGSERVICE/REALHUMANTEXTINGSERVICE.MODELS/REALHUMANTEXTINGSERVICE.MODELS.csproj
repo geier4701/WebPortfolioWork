@@ -46,7 +46,6 @@
     <Compile Include="Company.cs" />
     <Compile Include="Greeting.cs" />
     <Compile Include="Guest.cs" />
-    <Compile Include="InsertVariable.cs" />
     <Compile Include="Interfaces\IMessageRepo.cs" />
     <Compile Include="Interfaces\IReservationRepo.cs" />
     <Compile Include="RawMessage.cs" />

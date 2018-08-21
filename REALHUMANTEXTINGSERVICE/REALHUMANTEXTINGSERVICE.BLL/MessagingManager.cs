@@ -184,12 +184,7 @@ namespace REALHUMANTEXTINGSERVICE.BLL
 			{
 				message.text = message.text.Replace("{endTimeStamp}", DateConverter.ToDateTime(guest.reservation.endTimeStamp).ToString());
 			}
-
-			if (message.text.Contains("{company}"))
-			{
-				message.text = message.text.Replace("{company}", company.company);
-			}
-
+			
 			if (message.text.Contains("{city}"))
 			{
 				message.text = message.text.Replace("{city}", company.city);

@@ -7,3 +7,11 @@ C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\REALHUMANTEXTINGS
 C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\obj\Debug\REALHUMANTEXTINGSERVICE.MODELS.csproj.CopyComplete
 C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\obj\Debug\REALHUMANTEXTINGSERVICE.MODELS.csprojResolveAssemblyReference.cache
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\bin\Debug\REALHUMANTEXTINGSERVICE.MODELS.dll
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\bin\Debug\REALHUMANTEXTINGSERVICE.MODELS.pdb
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\obj\Debug\REALHUMANTEXTINGSERVICE.MODELS.csproj.CoreCompileInputs.cache
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\obj\Debug\REALHUMANTEXTINGSERVICE.MODELS.csproj.CopyComplete
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\obj\Debug\REALHUMANTEXTINGSERVICE.MODELS.dll
+C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\REALHUMANTEXTINGSERVICE.MODELS\obj\Debug\REALHUMANTEXTINGSERVICE.MODELS.pdb

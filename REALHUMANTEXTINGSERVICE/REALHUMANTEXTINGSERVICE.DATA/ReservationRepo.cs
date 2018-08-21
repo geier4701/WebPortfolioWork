@@ -12,8 +12,8 @@ namespace REALHUMANTEXTINGSERVICE.DATA
 {
 	public class ReservationRepo : IReservationRepo
 	{
-		const string guestPath = @"C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\REALHUMANTEXTINGSERVICE\DataFiles\Guests.json";
-		const string companyPath = @"C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\REALHUMANTEXTINGSERVICE\DataFiles\Companies.json";
+		const string guestPath = @"C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\DataFiles\Guests.json";
+		const string companyPath = @"C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\DataFiles\Companies.json";
 
 		public List<Guest> GetAllGuests()
 		{

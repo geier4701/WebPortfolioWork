@@ -12,7 +12,7 @@ namespace REALHUMANTEXTINGSERVICE.DATA
 {
 	public class MessageRepo : IMessageRepo
 	{
-		const string messagePath = @"C:\Users\Poor Richard\Desktop\Software Guild\Personal Projects\REALHUMANTEXTINGSERVICE\DataFiles\Messages.json";
+		const string messagePath = @"C:\Users\Poor Richard\Desktop\Software Guild\WebPortfolioWork\REALHUMANTEXTINGSERVICE\DataFiles\Messages.json";
 
 		public List<RawMessage> GetAllMessages()
 		{

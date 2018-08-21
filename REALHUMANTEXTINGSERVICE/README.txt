@@ -1,4 +1,4 @@
-Welcome to the REALHUMANTEXTINGSERVICE program this is definitely not a bot, friend! 
+Welcome to the REALHUMANTEXTINGSERVICE program that is definitely not a bot, friend! 
 
 Simply starting this program in Visual Studio should allow you to run it, however the file 
 paths located in the repositories are set to my local paths and will have to be updated in 
@@ -20,6 +20,8 @@ best work in the time given.
 
 With more time I would have liked to implement a full in-memory test repository to run 
 NUnit tests against as I was building the program. I would have also liked to include 
-full CRUD options for Guests, Companies, and Messages. 
+full CRUD options for Guests, Companies, and Messages, and currently my write function is 
+very inefficient and could be improved. A real front-end or maybe a web API would improve 
+user experience as well. 
 
 Enjoy!

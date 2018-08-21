@@ -20,6 +20,7 @@ best work in the time given.
 
 With more time I would have liked to implement a full in-memory test repository to run 
 NUnit tests against as I was building the program. I would have also liked to include 
-full CRUD options for Guests, Companies, and Messages. 
+full CRUD options for Guests, Companies, and Messages. My punctuation support in string 
+splitting is also poor and needs reworking.
 
 Enjoy!
